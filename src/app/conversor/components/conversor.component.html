@@ -17,7 +17,7 @@
 			placeholder="0" 
 			[(ngModel)]="conversao.valor"
 			numero
-			required> valor: {{ conversao.valor }}
+			required>
 		<select 
 			name="moedaDe"
 			class="form-control"
@@ -50,4 +50,10 @@
 			[disabled]="!conversaoForm.form.valid">
 	  </form>
 	 </div>
+	 <modal-cotacao 
+        [id]="'modalCotacao'" 
+        [conversaoResponse]="conversaoResponse" 
+		[conversao]="conversao" 
+        (onConfirm)="init()">
+    </modal-cotacao>
 </div>
